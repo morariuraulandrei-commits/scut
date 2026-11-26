@@ -1,0 +1,13 @@
+﻿{
+  "name": "scut",
+  "version": "1.0.0",
+  "description": "Passive domain security checker (email, DNS & HTTP headers) on Cloudflare Workers.",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": ["security", "dns", "spf", "dmarc", "dnssec", "security-headers", "cloudflare-workers", "osint"],
+  "author": "Morariu Andrei Raul",
+  "license": "MIT"
+}
