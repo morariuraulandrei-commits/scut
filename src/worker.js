@@ -41,6 +41,7 @@ function json(obj, status) {
 async function handleScut(url, ctx) {
   let d = (url.searchParams.get("domain") || "").trim().toLowerCase();
   d = d.replace(/^https?:\/\//, "").replace(/\/.*$/, "").replace(/:.*$/, "").replace(/\.$/, "");
+  d = d.replace(/^www\./, ""); // normalize www.x.com -> x.com (SPF/DMARC live on the apex)
   const valid = /^(?=.{1,253}$)([a-z0-9](-?[a-z0-9]){0,62}\.)+[a-z]{2,63}$/.test(d);
   const blocked =
     /(^|\.)(local|internal|lan|test|localhost|home|corp|intranet)$/.test(d) ||
